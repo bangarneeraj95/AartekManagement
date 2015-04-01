@@ -1,0 +1,87 @@
+<html>  
+<script>  
+
+function validateform(){ 
+
+var name=document.myform.userName.value;  
+var password=document.myform.userPass.value;  
+ var x=document.myform.userEmail.value;  
+var a=x.indexOf("@");  
+var d=x.lastIndexOf(".");   
+if (name==null || name==""){  
+  alert("username can't be blank"); 
+   return false;  
+}else  if(password.length<6){  
+  alert("Password must be at least 6 characters long.");  
+  return false;  
+     }
+  
+else if (a<1 || d<a+2 || d+3>=x.length){  
+  alert("Please enter a valid e-mail address");  
+  return false;  
+  }  
+  
+  else  if(name==null || name==""){  
+  alert("Password must be at least 6 characters long.");  
+  return false;  
+     }  
+}  
+</script>
+<style type="text/css">
+
+.from1{
+
+background-color: #52854C;
+font-family: Georgia;
+color: white;
+padding: 25px;
+width: 500px;
+border: 2px black solid;
+-moz-border-radius: 15px;
+-webkit-border-radius: 15px;
+-khtml-border-radius:15px;
+border-radius: 15px;
+
+-webkit-box-shadow:inset 1px 1px 2px #999;
+-moz-box-shadow:inset 1px 1px 2px #999;
+-khtml-box-shadow:inset 1px 1px 2px #999;
+box-shadow:inset 1px 1px 2px #999;
+}
+.error{ 
+      color:red; margin-:100; position:relative;}
+.white{ 
+    border:2px solid blue;
+  color:#FFFFFF; background-color:#999999}
+
+.red{ 
+    border:2px solid blue;
+  color:#006633; }
+  .ss{
+  margin-left:80%;
+  }
+ </style>
+
+
+<body>  <div class="from1">
+
+<form name="myform" action="Register" method="post" onSubmit="return(validateform());" >  
+  
+
+Name:<input type="text" width="164" name="userName"/><br/><br/>  
+Name:<input type="text" width="164" name="userName2" required /><br/><br/>  
+Password:<input type="password" width="164" name="userPass"/><br/><br/>  
+
+Email Id:<input type="text"  width="164" name="userEmail"/><br/><br/>  
+Country:  
+<select name="userCountry" >  
+<option value="India">India</option>  
+<option value="Pakistan">Pakistan</option>  
+<option value="">other</option>  
+</select>  
+  
+<br/><br/>  
+<input type="submit" value="register"/>  
+  
+</form>  </div>
+</body>  
+</html>  
