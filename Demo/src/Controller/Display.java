@@ -28,6 +28,7 @@ public class Display extends HttpServlet {
 	         out.print("hello");
 	         HttpSession ht=request.getSession();
              String flag=(String) ht.getAttribute("loginuser");
+             out.println("hello");
              out.println(flag);
              if(flag!=null){
 	         try {
