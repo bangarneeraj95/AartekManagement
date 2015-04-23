@@ -25,6 +25,7 @@ public class Display extends HttpServlet {
 		  PrintWriter out = response.getWriter();
 	         response.setContentType("text/html");
 	         out.println("<html><body>");
+	         out.print("hello");
 	         HttpSession ht=request.getSession();
              String flag=(String) ht.getAttribute("loginuser");
              out.println(flag);
@@ -44,6 +45,7 @@ public class Display extends HttpServlet {
 	       	                 out.println(" <td> <div> <a href='http://localhost:7070/Demo/EditData?uname="+s1+"'>Edit</a> </div> </td>");
 	             }
 	             out.println("</table>");
+	             out.print("hello");
 	             out.println("</html></body>");
 	          
 	            }

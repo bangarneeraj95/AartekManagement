@@ -5,8 +5,11 @@
 var request;  
 function sendInfo()  
 {  
-var v=document.vinform.t1.value;  
-var url="index.jsp?val="+v;  
+/* var v=document.vinform.t1.value;  
+
+var url="index.jsp?val="+v;   */
+var v1=document.vinform.sele.value;
+var url="index.jsp?val="+v1; 
   
 if(window.XMLHttpRequest){  
 request=new XMLHttpRequest();  
@@ -24,20 +27,44 @@ request.send();
   
 function getInfo(){  
 if(request.readyState==4){  
-var val=request.responseText;  
-document.getElementById('amit').innerHTML=val;  
+
+  var val=request.responseText;  
+/* document.getElementById('amit').innerHTML=val;  */
+
+	var n=val.split(",");    
+	/* document.write(n[3]); */
+
+	document.vinform.joblocation.value=n[3];
+	document.vinform.y.value=n[3];
+/* var s=xmlhttp.responseText;
+document.getElementById('amit').innerHTML=s; */
+	/* var n=s.split(",");
+	document.getElementById('a').innerHTML=n[0]; */
 }  
 }  
   
 </script>  
 </head>  
 <body>  
-    <marquee><h1>This is an example of ajax</h1></marquee>  
+    <marquee><h1>This is an example</h1></marquee>  
 <form name="vinform">  
-Enter id:<input type="text" name="t1" onkeyup="sendInfo()">  
-</form>  
-  
-<span id="amit"> </span>  
-  
+<!-- Enter id:<input type="text" name="t1" onkeyup="sendInfo()">   -->
+Employee Number:    <select name="sele" onChange="sendInfo()">
+            <option>select</option>
+            <option value="neeraj">neeraj</option>
+            <option value="mohan">mohan</option>
+    </select>
+ 
+
+  <tr> <td> Job_Location </td> <td>
+  <input name="joblocation" size="25" placeholder="Job_Location" type="text">
+
+
+<span id="amit"> </span>
+<select name="y">
+ <option value="neeraj">neeraj</option>
+  </select>
+<span id="a"> </span>  
+  </form>  
 </body>  
 </html>  
